@@ -81,6 +81,12 @@ inoremap <Down>  <ESC>:echoe "Use j"<CR>
 " Enter normal mode using dj keys (much more convenient)
 inoremap dj <esc>
 
+" Install vim-plug if it is not installed yet
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
 " Plugins 
 " NERDTree
@@ -88,6 +94,8 @@ call plug#begin()
 Plug 'preservim/NERDTree'
 Plug 'jiangmiao/auto-pairs'
 Plug 'sheerun/vim-polyglot'
+" Themes
+Plug 'jacoborus/tender.vim'
 Plug 'morhetz/gruvbox'
 Plug 'joshdick/onedark.vim'
 call plug#end()
