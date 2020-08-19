@@ -102,3 +102,8 @@ call plug#end()
 
 
 colorscheme gruvbox
+colorscheme onedark
+colorscheme gruvbox
+
+
+" Setup
