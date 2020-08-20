@@ -81,6 +81,8 @@ inoremap <Down>  <ESC>:echoe "Use j"<CR>
 " Enter normal mode using dj keys (much more convenient)
 inoremap dj <esc>
 
+map <C-n> :NERDTree<CR>
+
 " Install vim-plug if it is not installed yet
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -94,6 +96,11 @@ call plug#begin()
 Plug 'preservim/NERDTree'
 Plug 'jiangmiao/auto-pairs'
 Plug 'sheerun/vim-polyglot'
+Plug 'kien/ctrlp.vim'
+Plug 'tpope/vim-surround'
+Plug 'ervandew/supertab'
+Plug 'easymotion/vim-easymotion'
+Plug 'vim-airline/vim-airline'
 " Themes
 Plug 'jacoborus/tender.vim'
 Plug 'morhetz/gruvbox'
@@ -107,3 +114,8 @@ colorscheme gruvbox
 
 
 " Setup
+" Disables auto commenting
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+" Enables autoscrolling near top/bottom
+set scrolloff=15
