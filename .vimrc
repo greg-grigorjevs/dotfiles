@@ -119,3 +119,23 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " Enables autoscrolling near top/bottom
 set scrolloff=15
+
+" Set leader to ,
+let mapleader="\\"
+"let g:mapleader=","
+
+" Auto reload vimrc when editing it
+autocmd! bufwritepost .vimrc source ~/.vimrc
+
+set nohlsearch  "search highligting
+
+set showmatch "Cursor shows mathing braces"
+set autoindent "auto indentation"
+set copyindent "copy the previous indentation on autoindenting"
+
+" Tab naigation
+map <S-J> gT
+map <S-K> gt
+
+" New tab
+map <C-t><C-t> :tabnew<CR>
