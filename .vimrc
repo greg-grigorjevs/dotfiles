@@ -129,7 +129,7 @@ autocmd! bufwritepost .vimrc source ~/.vimrc
 
 set nohlsearch  "search highligting
 
-set showmatch "Cursor shows mathing braces"
+set noshowmatch "Cursor shows mathing braces"
 set autoindent "auto indentation"
 set copyindent "copy the previous indentation on autoindenting"
 
@@ -144,3 +144,6 @@ map <C-t><C-t> :tabnew<CR>
 set expandtab
 set tabstop=4
 set shiftwidth=4
+
+" Toggle paste mode on F2
+set pastetoggle=<F2>
