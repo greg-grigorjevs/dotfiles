@@ -139,3 +139,8 @@ map <S-K> gt
 
 " New tab
 map <C-t><C-t> :tabnew<CR>
+
+" Replace tabs with spaces 
+set expandtab
+set tabstop=4
+set shiftwidth=4
