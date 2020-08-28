@@ -162,8 +162,13 @@ let g:closetag_filenames = '*.html,*.xhtml,*.phtml'
 
 " Emmet config
 let g:user_emmet_install_global = 0
-autocmd Filetype html,css EmmetInstall
+autocmd Filetype html,css,php,jsx EmmetInstall
 let g:user_emmet_leader_key=','
+let g:user_emmet_settings = {
+\  'html' : {
+\    'indentation' : '  '
+\  }
+\}
 
 " Make NERDTree ignore node_modules directory
 let NERDTreeIgnore=['^node_modules$']
