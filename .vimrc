@@ -100,7 +100,15 @@ Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-surround'
 Plug 'ervandew/supertab'
 Plug 'easymotion/vim-easymotion'
+Plug 'othree/html5.vim'
 Plug 'vim-airline/vim-airline'
+Plug 'alvan/vim-closetag'
+Plug 'mattn/emmet-vim'
+" Snipmate and snipmate dependencies
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'garbas/vim-snipmate'
+Plug 'honza/vim-snippets'
 " Themes
 Plug 'jacoborus/tender.vim'
 Plug 'morhetz/gruvbox'
@@ -147,3 +155,14 @@ set shiftwidth=4
 
 " Toggle paste mode on F2
 set pastetoggle=<F2>
+
+" Closetag config
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml'
+
+" Emmet config
+let g:user_emmet_install_global = 0
+autocmd Filetype html,css EmmetInstall
+let g:user_emmet_leader_key=','
+
+" Make NERDTree ignore node_modules directory
+let NERDTreeIgnore=['^node_modules$']
