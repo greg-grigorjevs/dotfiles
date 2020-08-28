@@ -102,6 +102,7 @@ Plug 'ervandew/supertab'
 Plug 'easymotion/vim-easymotion'
 Plug 'othree/html5.vim'
 Plug 'vim-airline/vim-airline'
+Plug 'captbaritone/better-indent-support-for-php-with-html'
 Plug 'alvan/vim-closetag'
 Plug 'mattn/emmet-vim'
 " Snipmate and snipmate dependencies
