@@ -110,6 +110,8 @@ Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'
+" Prettier
+Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 " Themes
 Plug 'jacoborus/tender.vim'
 Plug 'morhetz/gruvbox'
