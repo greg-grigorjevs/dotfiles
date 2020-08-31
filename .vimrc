@@ -10,6 +10,7 @@
 " loaded some other way (e.g. saved as `foo`, and then Vim started with
 " `vim -u foo`).
 set nocompatible
+filetype plugin indent on
 
 " Turn on syntax highlighting.
 syntax on
@@ -110,8 +111,10 @@ Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'
+Plug '2072/php-indenting-for-vim'
 " Prettier
 Plug 'prettier/vim-prettier', { 'do': 'npm install' }
+Plug 'preservim/nerdcommenter'
 " Themes
 Plug 'jacoborus/tender.vim'
 Plug 'morhetz/gruvbox'
@@ -120,8 +123,8 @@ call plug#end()
 
 
 colorscheme gruvbox
-colorscheme onedark
-colorscheme gruvbox
+"colorscheme onedark
+"colorscheme gruvbox
 
 
 " Setup
@@ -142,6 +145,7 @@ set nohlsearch  "search highligting
 
 set noshowmatch "Cursor shows mathing braces"
 set autoindent "auto indentation"
+set smartindent
 set copyindent "copy the previous indentation on autoindenting"
 
 " Tab naigation
@@ -155,6 +159,8 @@ map <C-t><C-t> :tabnew<CR>
 set expandtab
 set tabstop=4
 set shiftwidth=4
+set softtabstop=4
+"set listchars=space:_,tab:>~ list
 
 " Toggle paste mode on F2
 set pastetoggle=<F2>
