@@ -82,7 +82,6 @@ inoremap <Down>  <ESC>:echoe "Use j"<CR>
 " Enter normal mode using dj keys (much more convenient)
 inoremap dj <esc>
 
-map <C-n> :NERDTree<CR>
 
 " Install vim-plug if it is not installed yet
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -115,6 +114,7 @@ Plug '2072/php-indenting-for-vim'
 " Prettier
 Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 Plug 'preservim/nerdcommenter'
+Plug 'christoomey/vim-tmux-navigator'
 " Themes
 Plug 'jacoborus/tender.vim'
 Plug 'morhetz/gruvbox'
@@ -146,7 +146,7 @@ set nohlsearch  "search highligting
 set noshowmatch "Cursor shows mathing braces"
 set autoindent "auto indentation"
 set smartindent
-set copyindent "copy the previous indentation on autoindenting"
+set nocopyindent "copy the previous indentation on autoindenting"
 
 " Tab naigation
 map <S-J> gT
@@ -178,5 +178,8 @@ let g:user_emmet_settings = {
 \  }
 \}
 
+" NERDTree config
 " Make NERDTree ignore node_modules directory
-let NERDTreeIgnore=['^node_modules$']
+let NERDTreeIgnore=['^node_modules$'] 
+map <C-n> :NERDTreeToggle<CR>
+let g:NERDTreeQuitOnOpen = 1 "closes nerdtree after opening a file"
