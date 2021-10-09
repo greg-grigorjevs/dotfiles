@@ -122,9 +122,9 @@ Plug 'joshdick/onedark.vim'
 call plug#end()
 
 
-colorscheme gruvbox
-"colorscheme onedark
 "colorscheme gruvbox
+colorscheme onedark
+colorscheme gruvbox
 
 
 " Setup
@@ -148,12 +148,19 @@ set autoindent "auto indentation"
 set smartindent
 set nocopyindent "copy the previous indentation on autoindenting"
 
+" MAPINGS
+" ===========
+
 " Tab naigation
 map <S-J> gT
 map <S-K> gt
 
 " New tab
 map <C-t><C-t> :tabnew<CR>
+
+noremap <Leader>s :w<CR>
+noremap <Leader>ss :wa<CR>
+"===========
 
 " Replace tabs with spaces 
 set expandtab
@@ -180,6 +187,6 @@ let g:user_emmet_settings = {
 
 " NERDTree config
 " Make NERDTree ignore node_modules directory
-let NERDTreeIgnore=['^node_modules$'] 
+let NERDTreeIgnore=['^node_modules$', '\.class$'] 
 map <C-n> :NERDTreeToggle<CR>
 let g:NERDTreeQuitOnOpen = 1 "closes nerdtree after opening a file"

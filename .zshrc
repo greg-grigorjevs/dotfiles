@@ -12,10 +12,10 @@ export ZSH="/Users/grigorijgrigorjev/.oh-my-zsh"
 # ZSH_THEME="robbyrussell"
 
 # POWERLEVER9K CONFIG
-ZSH_THEME="powerlevel9k/powerlevel9k"
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir rbenv vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
-# POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+#ZSH_THEME="powerlevel9k/powerlevel9k"
+#POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir rbenv vcs)
+#POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
+#POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -77,7 +77,7 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs histor
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 	git
-	zsh-autosuggestions
+#	zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -87,7 +87,7 @@ source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+ export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -106,8 +106,45 @@ source $ZSH/oh-my-zsh.sh
 #
 # Example aliases
 alias zshconfig="vim ~/.zshrc"
+alias vimconfig="vim ~/.vimrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias c="clear"
+alias uni="cd  '/Users/grigorijgrigorjev/Library/Mobile Documents/com~apple~CloudDocs/Uni Icloud/Uni/Year 2'"
+alias sail="./vendor/bin/sail"
+alias satf="sail artisan test --filter"
+alias sai="sail artisan insights"
+alias seeddb="sail php artisan tenants:seed --class=DemoDatabaseSeeder"
+alias remigrate="sail artisan tenants:migrate-fresh && seeddb"
+alias greptest="sail artisan test --list-tests | grep"
+alias affsupport="cd /Users/grigorijgrigorjev/programming/work/aurora/affinity-support"
 
 # enable syntax highlighting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
+#Create directory/ies and cd into it in one command
+mkcd() {
+    mkdir -p "$1" && cd "$1"
+}
+
+jvac() {
+    javac $1.java && java $1 ;
+}
+
+#Promt customization
+
+# Load version control information
+autoload -Uz vcs_info
+precmd() { vcs_info }
+
+# Format the vcs_info_msg_0_ variable
+zstyle ':vcs_info:git:*' formats 'on %b'
+ 
+# Set up the prompt (with git branch name)
+setopt PROMPT_SUBST
+#PROMPT='${PWD/#$HOME/~} ${vcs_info_msg_0_} > '
+PROMPT='~ '
+
+PATH="$PATH:`/Users/grigorijgrigorjev/.nvm/versions/node/v14.15.5/bin/yarn`"
